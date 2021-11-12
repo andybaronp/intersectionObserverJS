@@ -1,19 +1,12 @@
-const button = document.querySelector(".button");
 const img1 = document.querySelector("#img1");
 const img2 = document.querySelector("#img2");
 
 function callBack(entries) {
-  console.log(entries);
-  //   entries.forEach((entry) => {
-  //     if (entry.isIntersecting) {
-  //       entry.target.classList.add("visible");
-  //       button.classList.add("button-float");
-  //     }
-  //     else {
-  //       entry.target.classList.remove("visible");
-  //       button.classList.remove("button-float");
-  //     }
-  //   });
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
 }
 const options = {
   root: null,
@@ -23,3 +16,4 @@ const options = {
 
 const observer = new IntersectionObserver(callBack, options);
 observer.observe(img1);
+observer.observe(img2);
